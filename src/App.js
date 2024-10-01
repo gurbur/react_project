@@ -1,9 +1,10 @@
 import './App.css';
-import { input } from 'react-bootstrap'
+import CardExample from './CardExample';
+import NavVertical from './NavVerticall';
 
 function App() {
   return (
-    <page>
+    <div>
       <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
@@ -31,16 +32,28 @@ function App() {
           </div>
         </nav>
       </header>
-      <main>
 
-      </main>
-      <aside>
+      
 
-      </aside>
+      <div className="container">
+        <aside>
+            <NavVertical/>
+        </aside>
+        <main>
+          <section className="blog-posts">
+            <CardExample/>
+            <CardExample/>
+            <CardExample/>
+            <CardExample/>
+          </section>
+        </main>
+        
+      </div>
+
       <footer>
         
       </footer>
-    </page>
+    </div>
   );
 }
 
