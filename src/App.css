@@ -71,6 +71,7 @@ main {
 
 footer {
   background-color:#282c34;
+  color:gray;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0);
   padding: 20px;

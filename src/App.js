@@ -51,7 +51,8 @@ function App() {
       </div>
 
       <footer>
-        
+        <p>Assignment from Do-iT! IT communicating club of Ajou Univ.</p>
+        <p>Made by Jihwan Kim. Contact: gurbur331@ajou.ac.kr</p>
       </footer>
     </div>
   );
