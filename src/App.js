@@ -4,11 +4,19 @@ import NavVertical from './NavVerticall';
 import NavbarExample from './NavbarExample';
 import { useState } from 'react';
 
+const writings = [
+  { title:"title1", top_line:"top line 1", id:1 },
+  { title:"title2", top_line:"top line 2", id:2 },
+  { title:"title3", top_line:"top line 3", id:3 },
+  { title:"title4", top_line:"top line 4", id:4 },
+];
+
 function App() {
   const [isLogin, setLogin] = useState(false);
   function handleClickLogin() {
     setLogin(!isLogin);
   }
+
   return (
     <div>
       <header>
@@ -21,7 +29,7 @@ function App() {
         </aside>
         <main>
           <section className="blog-posts">
-            <Cards/>
+            <Cards isLogin={isLogin}  writings = {writings} />
           </section>
         </main>
         

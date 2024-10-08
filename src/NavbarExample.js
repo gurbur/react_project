@@ -7,7 +7,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function NavbarExample({ isLogin, onClickLogin }) {
-
   return (
     <>
       {[false].map((expand) => (
@@ -15,7 +14,7 @@ function NavbarExample({ isLogin, onClickLogin }) {
           <Container fluid>
             <Navbar.Brand href="#">Blog Example</Navbar.Brand>
             <Button classname="login-button" onClick={onClickLogin}>{isLogin ? "Logout" : "Login"}</Button>
-            <Profile isLogin={isLogin}/>
+            <Profile isLogin={isLogin} _onClick={onClickLogin} />
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -63,8 +62,8 @@ function NavbarExample({ isLogin, onClickLogin }) {
   );
 }
 
-function Profile(isLogin) {
-  let content = "";
+function Profile({ isLogin, _onClick }) {
+  let content;
   if (isLogin) {
     content = <Button classname="user-profile">Profile</Button>
   }
