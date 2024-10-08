@@ -6,13 +6,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function NavbarExample() {
+function NavbarExample({ isLogin, onClickLogin }) {
+
   return (
     <>
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
             <Navbar.Brand href="#">Blog Example</Navbar.Brand>
+            <Button classname="login-button" onClick={onClickLogin}>{isLogin ? "Logout" : "Login"}</Button>
+            <Profile isLogin={isLogin}/>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -58,6 +61,14 @@ function NavbarExample() {
       ))}
     </>
   );
+}
+
+function Profile(isLogin) {
+  let content = "";
+  if (isLogin) {
+    content = <Button classname="user-profile">Profile</Button>
+  }
+  return (<div>{content}</div>);
 }
 
 export default NavbarExample;

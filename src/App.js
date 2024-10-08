@@ -1,13 +1,18 @@
 import './App.css';
-import CardExample from './CardExample';
+import Cards from './Cards';
 import NavVertical from './NavVerticall';
 import NavbarExample from './NavbarExample';
+import { useState } from 'react';
 
 function App() {
+  const [isLogin, setLogin] = useState(false);
+  function handleClickLogin() {
+    setLogin(!isLogin);
+  }
   return (
     <div>
       <header>
-        <NavbarExample/>
+        <NavbarExample isLogin={isLogin} onClickLogin={handleClickLogin} />
       </header>
 
       <div className="container">
@@ -16,10 +21,7 @@ function App() {
         </aside>
         <main>
           <section className="blog-posts">
-            <CardExample/>
-            <CardExample/>
-            <CardExample/>
-            <CardExample/>
+            <Cards/>
           </section>
         </main>
         
