@@ -5,9 +5,7 @@ function Cards({ isLogin, writings }) {
         <MyCard writing={writing}/>
   );
   return (
-    <ul>
-        {isLogin && card}
-    </ul>
+    isLogin && card
   );
 }
 

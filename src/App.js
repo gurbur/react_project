@@ -2,15 +2,14 @@ import './App.css';
 import NavbarExample from './components/NavbarExample';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Detail from './components/Detail';
+import Detail from './pages/Detail';
 import HomePage from './pages/HomePage';
-import EventPage from './pages/EventPage';
 
 const writings = [
-  { title:"title1", top_line:"top line 1", id:1 },
-  { title:"title2", top_line:"top line 2", id:2 },
-  { title:"title3", top_line:"top line 3", id:3 },
-  { title:"title4", top_line:"top line 4", id:4 },
+  { title:"title1", top_line:"top line 1", id:0 },
+  { title:"title2", top_line:"top line 2", id:1 },
+  { title:"title3", top_line:"top line 3", id:2 },
+  { title:"title4", top_line:"top line 4", id:3 },
 ];
 
 function App() {
