@@ -1,6 +1,6 @@
 import './App.css';
 import Cards from './components/Cards';
-import NavVertical from './components/NavVerticall';
+import NavVertical from './components/NavVertical';
 import NavbarExample from './components/NavbarExample';
 import { useState } from 'react';
 
