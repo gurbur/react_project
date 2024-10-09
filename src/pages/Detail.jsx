@@ -1,7 +1,20 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Detail({writings}) {
   let {id} = useParams();
+  const [num, setNum] = useState(0);
+  let [alert, setAlert] = useState(true);
+
+  useEffect(()=>{
+    console.log(num);
+  },[num]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAlert(false);
+    }, 10000);
+  }, []);
 
   return (
     <div className="container">
@@ -16,6 +29,10 @@ export default function Detail({writings}) {
             <h4 className="pt-5">{ writings[id].title }</h4>
             <p>{ writings[id].top_line }</p>
             <button className="btn btn-danger">주문하기</button>
+            <button onClick={() => setNum(num+1)}>
+              +1
+            </button>
+            { alert ? <div> 지금 주문하세요 </div> : null}
           </div>
         </div>
       </div>

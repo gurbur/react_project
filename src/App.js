@@ -1,9 +1,13 @@
 import './App.css';
 import NavbarExample from './components/NavbarExample';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import Detail from './pages/Detail';
 import HomePage from './pages/HomePage';
+
+// TODO: API에서 axios로 GET요청 보내서 값 받아오기, React query까지 공부해오기
+
 
 const dummy_data = [
   { title:"title1", top_line:"top line 1", id:0 },
@@ -12,12 +16,25 @@ const dummy_data = [
   { title:"title4", top_line:"top line 4", id:3 },
 ];
 
+
+
 function App() {
   const [isLogin, setLogin] = useState(false);
+  
+  let response
+  useEffect(() => {
+    axios
+      .get("https://codingapple1.github.io/shop/data2.json")
+      .then((response)=>{
+        console.log(response.data);
+      });
+  }, []);
+   
+
+  
   function handleClickLogin() {
     setLogin(!isLogin);
   }
-
   return (
     <div>
       <header>
