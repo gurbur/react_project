@@ -1,7 +1,7 @@
 import './App.css';
-import Cards from './Cards';
-import NavVertical from './NavVerticall';
-import NavbarExample from './NavbarExample';
+import Cards from './components/Cards';
+import NavVertical from './components/NavVerticall';
+import NavbarExample from './components/NavbarExample';
 import { useState } from 'react';
 
 const writings = [
