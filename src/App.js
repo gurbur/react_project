@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Detail from './pages/Detail';
 import HomePage from './pages/HomePage';
 
-const writings = [
+const dummy_data = [
   { title:"title1", top_line:"top line 1", id:0 },
   { title:"title2", top_line:"top line 2", id:1 },
   { title:"title3", top_line:"top line 3", id:2 },
@@ -24,8 +24,8 @@ function App() {
         <NavbarExample isLogin={isLogin} onClickLogin={handleClickLogin} />
       </header>
     <Routes>
-      <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin} writings={writings}/>}/>
-      <Route path="/detail/:id" element={<Detail writings={writings}/>}/>
+      <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin} writings={dummy_data}/>}/>
+      <Route path="/detail/:id" element={<Detail writings={dummy_data}/>}/>
       <Route path="/about" element={<div>어바웃 페이지입니다</div>}/>
 
     </Routes>
