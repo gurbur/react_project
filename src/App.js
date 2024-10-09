@@ -4,6 +4,14 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Detail from './components/Detail';
 import HomePage from './pages/HomePage';
+import EventPage from './pages/EventPage';
+
+const writings = [
+  { title:"title1", top_line:"top line 1", id:1 },
+  { title:"title2", top_line:"top line 2", id:2 },
+  { title:"title3", top_line:"top line 3", id:3 },
+  { title:"title4", top_line:"top line 4", id:4 },
+];
 
 function App() {
   const [isLogin, setLogin] = useState(false);
@@ -17,9 +25,10 @@ function App() {
         <NavbarExample isLogin={isLogin} onClickLogin={handleClickLogin} />
       </header>
     <Routes>
-      <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin}/>}/>
-      <Route path="/detail" element={<Detail />}/>
+      <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin} writings={writings}/>}/>
+      <Route path="/detail/:id" element={<Detail writings={writings}/>}/>
       <Route path="/about" element={<div>어바웃 페이지입니다</div>}/>
+
     </Routes>
     <footer>
         <p>Assignment from Do-iT! IT communicating club of Ajou Univ.</p>
