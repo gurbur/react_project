@@ -12,7 +12,7 @@ function NavbarExample({ isLogin, onClickLogin }) {
       {[false].map((expand) => (
   <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
     <Container fluid>
-      <Navbar.Brand href="#">Blog Example</Navbar.Brand>
+      <Navbar.Brand href="/">Blog Example</Navbar.Brand>
 
       <div className="ms-auto d-flex align-items-center">
         <Button className="login-button me-2" onClick={onClickLogin}>
@@ -36,8 +36,8 @@ function NavbarExample({ isLogin, onClickLogin }) {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="justify-content-end flex-grow-1 pe-3">
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
             <NavDropdown
               title="Dropdown"
               id={`offcanvasNavbarDropdown-expand-${expand}`}
