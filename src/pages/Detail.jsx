@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Detail({writings}) {
+export default function Detail({products}) {
   let {id} = useParams();
   const [num, setNum] = useState(0);
   let [alert, setAlert] = useState(true);
@@ -26,8 +26,8 @@ export default function Detail({writings}) {
           />
           </div>
           <div className="col-md-6">
-            <h4 className="pt-5">{ writings[id].title }</h4>
-            <p>{ writings[id].top_line }</p>
+            <h4 className="pt-5">{ products[id - 1].title }</h4>
+            <p>{ products[id - 1].detail }</p>
             <button className="btn btn-danger">주문하기</button>
             <button onClick={() => setNum(num+1)}>
               +1
