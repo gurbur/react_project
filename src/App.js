@@ -16,32 +16,37 @@ const dummy_data = [
   { title:"title4", top_line:"top line 4", id:3 },
 ];
 
+const dtype = [
+  { id:0, title:"babs", content:"dsf", price:1000 }
+]
+
 
 
 function App() {
   const [isLogin, setLogin] = useState(false);
+  const [products, setProducts] = useState([]);
   
   let response
   useEffect(() => {
     axios
-      .get("https://codingapple1.github.io/shop/data2.json")
+      .get("http://43.201.55.59/products")
       .then((response)=>{
         console.log(response.data);
+        setProducts(response.data);
       });
   }, []);
-   
-
   
   function handleClickLogin() {
     setLogin(!isLogin);
   }
+
   return (
     <div>
       <header>
         <NavbarExample isLogin={isLogin} onClickLogin={handleClickLogin} />
       </header>
     <Routes>
-      <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin} writings={dummy_data}/>}/>
+      <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin} products={products}/>}/>
       <Route path="/detail/:id" element={<Detail writings={dummy_data}/>}/>
       <Route path="/about" element={<div>어바웃 페이지입니다</div>}/>
 

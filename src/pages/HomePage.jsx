@@ -1,10 +1,10 @@
 
-import Cards from '../components/Cards';
+import CardList from '../components/CardList';
 import NavVertical from '../components/NavVertical';
 
 
 
-export default function HomePage({ isLogin, setLogin, writings }) {
+export default function HomePage({ isLogin, setLogin, products }) {
     return(
         <div className="container">
         <aside>
@@ -12,7 +12,7 @@ export default function HomePage({ isLogin, setLogin, writings }) {
         </aside>
         <main>
         <section className="blog-posts">
-            <Cards isLogin={isLogin}  writings = {writings} />
+            <CardList isLogin={isLogin}  products = {products} />
         </section>
         </main>
         </div>
