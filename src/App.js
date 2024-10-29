@@ -26,6 +26,12 @@ function App() {
         console.log(response.data);
         setProducts(response.data);
       });
+      if(!localStorage.getItem("watched")) {
+        localStorage.setItem("watched", JSON.stringify( [] ));
+      }
+      if (!localStorage.getItem("inCart")) {
+        localStorage.setItem("inCart", JSON.stringify( [] ));
+      }
   }, []);
   
   function handleClickLogin() {
