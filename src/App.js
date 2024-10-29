@@ -14,11 +14,18 @@ import MyCart from './pages/MyCart';
 export let Context1 = React.createContext();
 
 function App() {
-  const [isLogin, setLogin] = useState(false);
+  const [isLogin, setLogin] = useState(() => {
+    return sessionStorage.getItem("isLogin") === "true";
+  });
+
   const [products, setProducts] = useState([]);
   
   let [tab, setTab] = useState(0);
   
+  useEffect(() => {
+    sessionStorage.setItem("isLogin", isLogin);
+  }, [isLogin]);
+
   let response
   useEffect(() => {
     axios
