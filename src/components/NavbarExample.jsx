@@ -5,8 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useNavigate } from 'react-router-dom';
 
 function NavbarExample({ isLogin, onClickLogin }) {
+  let navigate = useNavigate();
+  function onClickMyCart() {
+    navigate(`/cart`);
+  }
   return (
     <>
       {[false].map((expand) => (
@@ -19,7 +24,10 @@ function NavbarExample({ isLogin, onClickLogin }) {
           {isLogin ? "Logout" : "Login"}
         </Button>
         {isLogin && (
-          <Profile isLogin={isLogin} _onClick={onClickLogin} />
+          <div>
+            <Profile isLogin={isLogin} _onClick={onClickLogin} />
+            <Button className="my-cart-button" onClick={onClickMyCart}>My Cart</Button>
+          </div>
         )}
       </div>
 

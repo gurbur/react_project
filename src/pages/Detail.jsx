@@ -30,26 +30,27 @@ export default function Detail(props) {
   }, []);
 
   function addCart() {
-    let in_cart = localStorage.getItem("inCart");
-    if (!in_cart) { // inCart exist
+    let in_cart = JSON.parse(localStorage.getItem("inCart"));
+    if (in_cart) { // inCart exist
       if (in_cart.indexOf(id) === -1) { // product not exist in in_cart
-        // TODO
-
+        in_cart.push(id);
+        localStorage.setItem("inCart", JSON.stringify(in_cart));
+        console.log("new item added to cart");
       }
       else { // product already exist in in_cart
-        // TODO
-
+        // 예외 처리
+        // 경고 또는 장바구니에서 제거하기
+        
       }
     }
     else { // inCart not exist
-      // TODO
-
+      localStorage.setItem("inCart", JSON.stringify( [] ));
     }
     //localStorage.setItem("inCart", id);
   }
   
 
-  let shoesimage = "https://codingapple1.github.io/shop/shoes"+ id +".jpg";
+  let shoesimage = `https://codingapple1.github.io/shop/shoes${id}.jpg`;
   return (
     <div className="container">
       <div className="row">

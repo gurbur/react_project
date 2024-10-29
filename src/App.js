@@ -7,8 +7,9 @@ import Detail from './pages/Detail';
 import HomePage from './pages/HomePage';
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import MyCart from './pages/MyCart';
 
-// TODO: 최근 본 상품, 장바구니 구현하기
+// TODO: 장바구니 구현하기
 
 export let Context1 = React.createContext();
 
@@ -60,7 +61,7 @@ function App() {
           <Route path="/" element={<HomePage isLogin={isLogin} setLogin={setLogin} products={products}/>}/>
           <Route path="/detail/:id" element={<Detail products={products}/>}/>
           <Route path="/about" element={<div>어바웃 페이지입니다</div>}/>
-
+          <Route path="/cart" element={<MyCart products={products}/>} />
         </Routes>
         <footer>
           <p>Assignment from Do-iT! IT communicating club of Ajou Univ.</p>
