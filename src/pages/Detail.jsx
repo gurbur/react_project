@@ -9,12 +9,12 @@ export default function Detail(props) {
   let {tab, setTab} = useContext(Context1);
 
   useEffect(()=>{
-    let watched = localStorage.getItem("watched");
-    if(!watched) { // watched is exist
+    let watched = JSON.parse(localStorage.getItem("watched"));
+    if(watched) { // watched is exist
       if (watched.indexOf(id) === -1) { // id not existed
         // add id to watched
         watched.push(id);
-        localStorage.setItem("watched", watched);
+        localStorage.setItem("watched", JSON.stringify(watched));
       }
       // if id exist already
       // pass
